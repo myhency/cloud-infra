@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+
+  db:
+    image: mariadb
+    ports:
+        - 3307:3306
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: qwer1234
+      MYSQL_DATABASE: clouddb
+      MYSQL_USER: cloud
+      MYSQK_PASSWORD: qwer1234
+    # volumes:
+    #     - /C/Users/hency/MyProjects/cloud-bread-stock/cloud-infra/mariadb/data:/var/lib/mysql
+    #     - /C/Users/hency/MyProjects/cloud-bread-stock/cloud-infra/mariadb/my.cnf:/etc/mysql/my.cnf
