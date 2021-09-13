@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+
+  dbdev:
+    image: mariadb
+    ports:
+        - 3308:3306
+    restart: always
+    command: --init-file /data/application/init.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: P!ssw0rd
+      MYSQL_DATABASE: clouddb
+      MYSQL_USER: cloud
+      MYSQK_PASSWORD: P!ssw0rd
+    volumes:
+        - /Users/james/myprojects/cloud-projects/cloud-infra/mariadb/dev/data:/var/lib/mysql
+        - /Users/james/myprojects/cloud-projects/cloud-infra/mariadb/dev/my.cnf:/etc/mysql/my.cnf
+        - /Users/james/myprojects/cloud-projects/cloud-infra/mariadb/dev/data/init.sql:/data/application/init.sql
